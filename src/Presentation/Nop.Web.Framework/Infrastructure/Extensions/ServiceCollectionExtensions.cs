@@ -17,6 +17,7 @@ using Nop.Core.Domain;
 using Nop.Core.Domain.Security;
 using Nop.Core.Http;
 using Nop.Core.Infrastructure;
+using Nop.Core.Redis;
 using Nop.Data;
 using Nop.Services.Authentication;
 using Nop.Services.Authentication.External;
@@ -51,7 +52,7 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
             services.ConfigureStartupConfig<HostingConfig>(configuration.GetSection("Hosting"));
             //add accessor to HttpContext
             services.AddHttpContextAccessor();
-
+            
             //create, initialize and configure the engine
             var engine = EngineContext.Create();
             engine.Initialize(services);
