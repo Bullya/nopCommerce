@@ -44,7 +44,7 @@ namespace Nop.Core.Redis
         /// <returns></returns>
         protected string GetConnectionString()
         {
-            return _config.RedisCachingConnectionString;
+            return _config.RedisConnectionString;
         }
 
         /// <summary>

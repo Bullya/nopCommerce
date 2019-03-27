@@ -352,7 +352,7 @@ namespace Nop.Core.Infrastructure.Extensions
         /// <param name="config"></param>
         private static void LoadPluginsInfo(NopConfig config)
         {
-            var useRedisToStorePluginsInfo = config.UseRedisToStorePluginsInfo && config.RedisCachingEnabled;
+            var useRedisToStorePluginsInfo = config.RedisEnabled && config.UseRedisToStorePluginsInfo;
 
             //we use the main IRedisConnectionWrapper implementation since the DI isn't initialized yet
             PluginsInfo = useRedisToStorePluginsInfo

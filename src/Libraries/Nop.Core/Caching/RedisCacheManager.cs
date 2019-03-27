@@ -28,7 +28,7 @@ namespace Nop.Core.Caching
             IRedisConnectionWrapper connectionWrapper,
             NopConfig config)
         {
-            if (string.IsNullOrEmpty(config.RedisCachingConnectionString))
+            if (string.IsNullOrEmpty(config.RedisConnectionString))
                 throw new Exception("Redis connection string is empty");
 
             this._perRequestCacheManager = perRequestCacheManager;

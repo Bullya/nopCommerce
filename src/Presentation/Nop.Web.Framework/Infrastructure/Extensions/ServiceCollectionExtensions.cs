@@ -169,7 +169,7 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
         {
             //check whether to persist data protection in Redis
             var nopConfig = services.BuildServiceProvider().GetRequiredService<NopConfig>();
-            if (nopConfig.RedisCachingEnabled && nopConfig.PersistDataProtectionKeysToRedis)
+            if (nopConfig.RedisEnabled && nopConfig.PersistDataProtectionKeysToRedis)
             {
                 //store keys in Redis
                 services.AddDataProtection().PersistKeysToRedis(() =>

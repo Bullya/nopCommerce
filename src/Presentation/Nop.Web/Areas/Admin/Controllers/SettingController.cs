@@ -1747,7 +1747,7 @@ namespace Nop.Web.Areas.Admin.Controllers
         public IActionResult RedisCacheHighTrafficWarning(bool loadAllLocaleRecordsOnStartup)
         {
             //LoadAllLocaleRecordsOnStartup is set and Redis cache is used, so display warning
-            if (_config.RedisCachingEnabled && loadAllLocaleRecordsOnStartup)
+            if (_config.RedisEnabled &&_config.UseRedisToCaching && loadAllLocaleRecordsOnStartup)
                 return Json(new
                 {
                     Result = _localizationService.GetResource(
